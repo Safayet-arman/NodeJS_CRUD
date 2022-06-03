@@ -4,8 +4,12 @@ const mongoose = require("mongoose");
 
 mongoose.connect("mongodb+srv://safayet-arman:armanmouatasim@cluster0.pmqab.mongodb.net/class-task?retryWrites=true&w=majority")
 const studentsRoutes = require("./api/routes/students");
+app.use(express.json());
+app.use(express.urlencoded({
 
+    extended: true 
+}));
 app.use("/students", studentsRoutes);
 
 
-module.exports = app;
+module.exports = app; 
